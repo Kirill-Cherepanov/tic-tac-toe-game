@@ -8,6 +8,7 @@ export default class TicTacToeGame {
         this.X_CLASS = X_CLASS;
         this.O_CLASS = O_CLASS;
         this.xTurn = xTurn;
+        this.makeMove = this.makeMove.bind(this);
         this.WINNING_COMBINATIONS = [
             [0, 3, 6],
             [1, 4, 7],
@@ -25,14 +26,12 @@ export default class TicTacToeGame {
         this.cells.forEach(cell => {
             cell.classList.remove(this.X_CLASS);
             cell.classList.remove(this.O_CLASS);
-            cell.addEventListener('click', this.makeMove.bind(this));
+            cell.addEventListener('click', this.makeMove, { once: true });
         });
         this.restartButton.addEventListener('click', this.startGame.bind(this));
     }
     makeMove(e) {
         const cell = e.target;
-        if (cell.classList.contains('o') || cell.classList.contains('x'))
-            return;
         const currentClass = this.xTurn ? this.X_CLASS : this.O_CLASS;
         this.placeMark(cell, currentClass);
         this.swapTurns();
