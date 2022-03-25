@@ -1,0 +1,10 @@
+import TicTacToeGame from '../scripts/TicTacToeGame.js';
+const X_CLASS = 'x';
+const O_CLASS = 'o';
+const cellElements = document.querySelectorAll('[data-cell]');
+const board = document.querySelector('.gameboard');
+const endMessage = document.querySelector('.end-message');
+const endText = document.querySelector('[data-end-text]');
+const restartButton = document.querySelector('[data-restart-button]');
+const ticTacToe = new TicTacToeGame(cellElements, board, endMessage, endText, restartButton, X_CLASS, O_CLASS);
+ticTacToe.startGame();

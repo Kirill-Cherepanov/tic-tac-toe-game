@@ -11,9 +11,9 @@
     <div class="page">
         <h1 class="tic-tac-toe-title">Tic Tac Toe</h1>
         <div class="tic-tac-toe-game">
-            <div class="gameboard o" id="gameboard">
-                <div class="cell x" data-cell></div>
-                <div class="cell o" data-cell></div>
+            <div class="gameboard" id="gameboard">
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
                 <div class="cell" data-cell></div>
                 <div class="cell" data-cell></div>
                 <div class="cell" data-cell></div>
@@ -23,10 +23,12 @@
                 <div class="cell" data-cell></div>
             </div>
             <div class="end-message">
-                <div class="end-text" data-end-message-text>X wins</div>
-                <button id="restart-button">Restart</button>
+                <div class="end-text" data-end-text></div>
+                <button id="restart-button" data-restart-button>Restart</button>
             </div>
         </div>
     </div>
+    <script type="module" src="scripts/TicTacToeGame.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
 </body>
 </html>
