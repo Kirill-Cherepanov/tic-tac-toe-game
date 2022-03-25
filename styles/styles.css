@@ -1,0 +1,169 @@
+@font-face {
+  font-family: "evil-empire";
+  src: url("../fonts/EvilEmpire.ttf");
+}
+
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "evil-empire", sans-serif;
+  margin: 0;
+}
+
+.page {
+  width: 50vh;
+  margin: 0 auto;
+}
+
+.tic-tac-toe-title {
+  color: #1a4756;
+  letter-spacing: 2px;
+  font-size: 2.15rem;
+  text-align: center;
+}
+
+.tic-tac-toe-game {
+  color: #1a4756;
+  position: relative;
+  width: 50vh;
+  height: 50vh;
+}
+
+.gameboard {
+  width: 100%;
+  height: 100%;
+  margin: 20px 0;
+  gap: 5px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.cell {
+  background-color: #43A6C6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.cell.x,
+.cell.o {
+  cursor: not-allowed;
+}
+
+.cell.x::before,
+.cell.x::after,
+.cell.o::before {
+  background-color: #1a4756;
+}
+
+.gameboard.x .cell:not(.x):not(.o):hover::before,
+.gameboard.x .cell:not(.x):not(.o):hover::after,
+.gameboard.o .cell:not(.x):not(.o):hover::before {
+  background-color: #91cbde;
+}
+
+.cell.x::before,
+.cell.x::after,
+.gameboard.x .cell:not(.x):not(.o):hover::before,
+.gameboard.x .cell:not(.x):not(.o):hover::after {
+  position: absolute;
+  content: '';
+  width: 12%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.cell.x::before,
+.gameboard.x .cell:not(.x):not(.o):hover::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.cell.x::after,
+.gameboard.x .cell:not(.x):not(.o):hover::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.cell.o::before,
+.cell.o::after,
+.gameboard.o .cell:not(.x):not(.o):hover::before,
+.gameboard.o .cell:not(.x):not(.o):hover::after {
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+}
+
+.cell.o::before,
+.gameboard.o .cell:not(.x):not(.o):hover::before {
+  width: 85%;
+  height: 85%;
+}
+
+.cell.o::after,
+.gameboard.o .cell:not(.x):not(.o):hover::after {
+  background-color: #43A6C6;
+  width: 65%;
+  height: 65%;
+}
+
+.end-message {
+  visibility: hidden;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.end-message .end-text {
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.end-message #restart-button {
+  font-size: 1.2rem;
+  background-color: #1a4756;
+  color: #fff;
+  border: none;
+  width: 40%;
+  padding: 8px 0;
+  margin-top: 10px;
+}
+
+.end-message.show {
+  visibility: visible;
+  opacity: 1;
+}
+/*# sourceMappingURL=styles.css.map */

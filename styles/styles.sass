@@ -1,0 +1,128 @@
+@font-face 
+    font-family: "evil-empire"
+    src: url("../fonts/EvilEmpire.ttf")
+
+$main-color: #43A6C6
+$second-color: darken($main-color, 30%)
+    
+*, *::after, *::before 
+    box-sizing: border-box
+
+body
+    font-family: "evil-empire", sans-serif
+    margin: 0
+
+.page
+    width: 50vh
+    margin: 0 auto
+
+.tic-tac-toe-title
+    color: $second-color
+    letter-spacing: 2px
+    font-size: 2.15rem
+    text-align: center
+
+
+.tic-tac-toe-game
+    color: $second-color
+    position: relative
+    width: 50vh
+    height: 50vh
+
+.gameboard
+    width: 100%
+    height: 100%
+    margin: 20px 0
+    gap: 5px
+    display: grid
+    grid-template-rows: repeat(3, 1fr)
+    grid-template-columns: repeat(3, 1fr)
+
+.cell
+    background-color: $main-color
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+    cursor: pointer
+
+.cell.x,
+.cell.o
+    cursor: not-allowed
+
+.cell.x::before,
+.cell.x::after,
+.cell.o::before
+    background-color: $second-color
+
+.gameboard.x .cell:not(.x):not(.o):hover::before,
+.gameboard.x .cell:not(.x):not(.o):hover::after,
+.gameboard.o .cell:not(.x):not(.o):hover::before
+    background-color: lighten($main-color, 20%)
+
+.cell.x::before,
+.cell.x::after,
+.gameboard.x .cell:not(.x):not(.o):hover::before,
+.gameboard.x .cell:not(.x):not(.o):hover::after
+    position: absolute
+    content: ''
+    width: 12%
+    height: 100%
+    border-radius: 10px
+
+.cell.x::before,
+.gameboard.x .cell:not(.x):not(.o):hover::before
+    transform: rotate(45deg) 
+
+.cell.x::after,
+.gameboard.x .cell:not(.x):not(.o):hover::after
+    transform: rotate(-45deg) 
+
+.cell.o::before,
+.cell.o::after,
+.gameboard.o .cell:not(.x):not(.o):hover::before,
+.gameboard.o .cell:not(.x):not(.o):hover::after
+    position: absolute
+    content: ''
+    border-radius: 50%
+    
+.cell.o::before,
+.gameboard.o .cell:not(.x):not(.o):hover::before
+    width: 85%
+    height: 85%
+
+
+.cell.o::after,
+.gameboard.o .cell:not(.x):not(.o):hover::after
+    background-color: $main-color
+    width: 65%
+    height: 65%
+
+.end-message
+    visibility: hidden
+    opacity: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    position: absolute
+    top: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(255, 255, 255, 0.85)
+    transition: opacity 1s    
+    .end-text
+        font-size: 2rem
+        letter-spacing: 1px
+    #restart-button
+        font-size: 1.2rem
+        background-color: $second-color
+        color: #fff
+        border: none
+        width: 40%
+        padding: 8px 0
+        margin-top: 10px
+    &.show
+        visibility: visible
+        opacity: 1
+    
