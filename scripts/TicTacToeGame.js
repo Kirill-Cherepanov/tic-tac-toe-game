@@ -25,9 +25,9 @@ export default class TicTacToeGame {
         this.cells.forEach(cell => {
             cell.classList.remove(this.X_CLASS);
             cell.classList.remove(this.O_CLASS);
-            cell.addEventListener('pointerdown', this.makeMove.bind(this));
+            cell.addEventListener('click', this.makeMove.bind(this));
         });
-        this.restartButton.addEventListener('pointerdown', this.startGame.bind(this));
+        this.restartButton.addEventListener('click', this.startGame.bind(this));
     }
     makeMove(e) {
         const cell = e.target;
