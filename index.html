@@ -1,34 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic tac toe</title>
-    <link rel="stylesheet" href="./styles/styles.css">
-</head>
-<body>
-    <div class="page">
-        <h1 class="tic-tac-toe-title">Tic Tac Toe</h1>
-        <div class="tic-tac-toe-game">
-            <div class="gameboard" id="gameboard">
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-                <div class="cell" data-cell></div>
-            </div>
-            <div class="end-message">
-                <div class="end-text" data-end-text></div>
-                <button id="restart-button" data-restart-button>Restart</button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tic tac toe</title>
+        <link rel="stylesheet" href="./styles/styles.css" />
+    </head>
+    <body>
+        <div class="page">
+            <h1 class="tic-tac-toe-title">Tic Tac Toe</h1>
+            <div class="tic-tac-toe-game">
+                <div class="gameboard" id="gameboard">
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                </div>
+                <div class="end-message">
+                    <div class="end-text" data-end-text></div>
+                    <button id="restart-button" data-restart-button>
+                        Restart
+                    </button>
+                </div>
+                <div class="game-type">
+                    <button id="single-button" data-single-button>
+                        <i class="single-icon"></i>
+                        <label>Singleplayer</label>
+                    </button>
+                    <button id="multi-button" data-multi-button>
+                        <i class="multi-icon"></i>
+                        <label>Multiplayer</label>
+                    </button>
+                    <button id="ai-button" data-ai-button>
+                        <i class="ai-icon"></i>
+                        <label>Against AI</label>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-    <script type="module" src="scripts/TicTacToeGame.js"></script>
-    <script type="module" src="./scripts/index.js"></script>
-</body>
+        <script type="module" src="scripts/TicTacToeGame.js"></script>
+        <script type="module" src="./scripts/index.js"></script>
+    </body>
 </html>

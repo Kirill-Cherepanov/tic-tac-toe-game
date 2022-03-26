@@ -1,6 +1,6 @@
 @font-face {
   font-family: "evil-empire";
-  src: url("../fonts/EvilEmpire.ttf");
+  src: url("../assets/fonts/EvilEmpire.ttf");
 }
 
 *, *::after, *::before {
@@ -35,7 +35,7 @@ body {
 .gameboard {
   width: 100%;
   height: 100%;
-  margin: 20px 0;
+  margin: 15px 0;
   gap: 5px;
   display: -ms-grid;
   display: grid;
@@ -168,5 +168,46 @@ body {
 .end-message.show {
   visibility: visible;
   opacity: 1;
+}
+
+.game-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game-type button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.game-type button label {
+  color: #1a4756;
+}
+
+.game-type button i {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background-size: contain;
+}
+
+.game-type button .single-icon {
+  background-image: url("../assets/icons/single.png");
+}
+
+.game-type button .multi-icon {
+  background-image: url("../assets/icons/multiplayer.png");
+}
+
+.game-type button .ai-icon {
+  background-image: url("../assets/icons/ai.png");
 }
 /*# sourceMappingURL=styles.css.map */

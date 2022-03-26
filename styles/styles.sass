@@ -1,6 +1,6 @@
 @font-face 
     font-family: "evil-empire"
-    src: url("../fonts/EvilEmpire.ttf")
+    src: url("../assets/fonts/EvilEmpire.ttf")
 
 $main-color: #43A6C6
 $second-color: darken($main-color, 30%)
@@ -32,7 +32,7 @@ body
 .gameboard
     width: 100%
     height: 100%
-    margin: 20px 0
+    margin: 15px 0
     gap: 5px
     display: grid
     grid-template-rows: repeat(3, 1fr)
@@ -128,4 +128,25 @@ body
     &.show
         visibility: visible
         opacity: 1
-    
+
+.game-type
+    display: flex
+    justify-content: center
+    align-items: center
+    button
+        border: none
+        background-color: rgba(0, 0, 0 ,0)
+        cursor: pointer
+        label
+            color: $second-color
+        i
+            display: inline-block
+            width: 36px
+            height: 36px
+            background-size: contain
+        .single-icon
+            background-image: url('../assets/icons/single.png')
+        .multi-icon
+            background-image: url('../assets/icons/multiplayer.png')
+        .ai-icon
+            background-image: url('../assets/icons/ai.png')
