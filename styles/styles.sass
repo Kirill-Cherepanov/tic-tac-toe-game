@@ -137,7 +137,10 @@ body
         border: none
         background-color: rgba(0, 0, 0 ,0)
         cursor: pointer
+        transition: transform 0.5s
         label
+            transition: opacity 0.3s
+            opacity: 0
             color: $second-color
         i
             display: inline-block
@@ -150,3 +153,9 @@ body
             background-image: url('../assets/icons/multiplayer.png')
         .ai-icon
             background-image: url('../assets/icons/ai.png')
+        &.active label
+            opacity: 1
+        &:hover
+            transform: scale(1.25)
+            label
+                opacity: 1
