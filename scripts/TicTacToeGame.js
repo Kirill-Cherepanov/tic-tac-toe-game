@@ -19,6 +19,7 @@ export default class TicTacToeGame {
             [0, 4, 8],
             [2, 4, 6]
         ];
+        this.startGame = this.startGame.bind(this);
         this.makeMove = this.makeMove.bind(this);
         this.gameMode = this.findActiveModeButton().dataset.gameMode;
         this.modeButtons.forEach(button => {
@@ -48,7 +49,7 @@ export default class TicTacToeGame {
             cell.classList.remove(this.O_CLASS);
             cell.addEventListener('click', this.makeMove, { once: true });
         });
-        this.restartButton.addEventListener('click', this.startGame.bind(this));
+        this.restartButton.addEventListener('click', this.startGame, { once: true });
     }
     makeMove(e) {
         const cell = e.target;
