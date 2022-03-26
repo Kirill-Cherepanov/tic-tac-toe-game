@@ -170,7 +170,7 @@ body {
   opacity: 1;
 }
 
-.game-type {
+.game-mode {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -182,7 +182,7 @@ body {
           align-items: center;
 }
 
-.game-type button {
+.game-mode button {
   border: none;
   background-color: rgba(0, 0, 0, 0);
   cursor: pointer;
@@ -192,42 +192,42 @@ body {
   transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
-.game-type button label {
+.game-mode button label {
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
   opacity: 0;
   color: #1a4756;
 }
 
-.game-type button i {
+.game-mode button i {
   display: inline-block;
   width: 36px;
   height: 36px;
   background-size: contain;
 }
 
-.game-type button .single-icon {
+.game-mode button .single-icon {
   background-image: url("../assets/icons/single.png");
 }
 
-.game-type button .multi-icon {
+.game-mode button .multi-icon {
   background-image: url("../assets/icons/multiplayer.png");
 }
 
-.game-type button .ai-icon {
+.game-mode button .ai-icon {
   background-image: url("../assets/icons/ai.png");
 }
 
-.game-type button.active label {
+.game-mode button.active label {
   opacity: 1;
 }
 
-.game-type button:hover {
+.game-mode button:hover {
   -webkit-transform: scale(1.25);
           transform: scale(1.25);
 }
 
-.game-type button:hover label {
+.game-mode button:hover label {
   opacity: 1;
 }
 /*# sourceMappingURL=styles.css.map */

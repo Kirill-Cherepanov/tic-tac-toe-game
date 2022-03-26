@@ -4,9 +4,11 @@ export default class TicTacToeGame {
     endMessage: HTMLDivElement;
     endText: HTMLDivElement;
     restartButton: HTMLDivElement;
+    modeButtons: HTMLButtonElement[];
     X_CLASS: string;
     O_CLASS: string;
     xTurn: boolean;
+    gameMode: string;
     WINNING_COMBINATIONS: [number, number, number][];
 
     constructor(
@@ -15,19 +17,17 @@ export default class TicTacToeGame {
         endMessage: HTMLDivElement,
         endText: HTMLDivElement,
         restartButton: HTMLDivElement,
-        X_CLASS: string,
-        O_CLASS: string,
-        xTurn: boolean = true
+        modeButtons: HTMLButtonElement[]
     ) {
         this.cells = cells;
         this.board = board;
         this.endMessage = endMessage;
         this.endText = endText;
         this.restartButton = restartButton;
-        this.X_CLASS = X_CLASS;
-        this.O_CLASS = O_CLASS;
-        this.xTurn = xTurn;
-        this.makeMove = this.makeMove.bind(this);
+        this.modeButtons = modeButtons;
+        this.X_CLASS = 'x';
+        this.O_CLASS = 'o';
+        this.xTurn = true;
 
         this.WINNING_COMBINATIONS = [
             [0, 3, 6],
@@ -39,6 +39,28 @@ export default class TicTacToeGame {
             [0, 4, 8],
             [2, 4, 6]
         ];
+        this.makeMove = this.makeMove.bind(this);
+
+        this.gameMode = <string>this.findActiveModeButton().dataset.gameMode;
+
+        this.modeButtons.forEach(button => {
+            button.addEventListener('click', this.changeMode.bind(this));
+        });
+    }
+
+    findActiveModeButton(): HTMLButtonElement {
+        return this.modeButtons.filter(button => {
+            if (button.classList.contains('active')) return true;
+            return false;
+        })[0];
+    }
+
+    changeMode(e: Event): void {
+        const button = <HTMLButtonElement>e.currentTarget;
+        if (button.dataset.gameMode === this.gameMode) return;
+        this.findActiveModeButton().classList.remove('active');
+        this.gameMode = <string>button.dataset.gameMode;
+        button.classList.add('active');
     }
 
     startGame(): void {

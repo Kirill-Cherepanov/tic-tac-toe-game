@@ -5,12 +5,19 @@ const O_CLASS: string = 'o';
 
 const cellElements: NodeListOf<HTMLDivElement> =
     document.querySelectorAll('[data-cell]');
-const board = <HTMLDivElement>document.querySelector('.gameboard');
-const endMessage = <HTMLDivElement>document.querySelector('.end-message');
+const board = <HTMLDivElement>document.getElementById('gameboard');
+const endMessage = <HTMLDivElement>document.querySelector('[data-end-message]');
 const endText = <HTMLDivElement>document.querySelector('[data-end-text]');
 const restartButton = <HTMLDivElement>(
     document.querySelector('[data-restart-button]')
 );
+const singlePlayerButton = <HTMLButtonElement>(
+    document.getElementById('single-button')
+);
+const multiPlayerButton = <HTMLButtonElement>(
+    document.getElementById('multi-button')
+);
+const aiButton = <HTMLButtonElement>document.getElementById('ai-button');
 
 const ticTacToe: TicTacToeGame = new TicTacToeGame(
     cellElements,
@@ -18,8 +25,7 @@ const ticTacToe: TicTacToeGame = new TicTacToeGame(
     endMessage,
     endText,
     restartButton,
-    X_CLASS,
-    O_CLASS
+    [singlePlayerButton, multiPlayerButton, aiButton]
 );
 
 ticTacToe.startGame();
