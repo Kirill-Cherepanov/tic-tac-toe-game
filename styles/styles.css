@@ -122,6 +122,149 @@ body {
   height: 65%;
 }
 
+.multiplayer-menu {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  padding: 10px;
+  -webkit-box-shadow: 0px 0px 10px #43A6C6;
+          box-shadow: 0px 0px 10px #43A6C6;
+}
+
+.multiplayer-menu.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-y: scroll;
+}
+
+.multiplayer-menu.search .multiplayer-session {
+  display: block;
+}
+
+.multiplayer-menu.entering-username {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.multiplayer-menu.entering-username .username-form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.username-form-container {
+  height: 100%;
+  width: 100%;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.username-form-container #username-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 25px;
+}
+
+.username-form-container #username-form .username-label {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.username-form-container #username-form #username {
+  height: 25px;
+  margin-bottom: 5px;
+  border: 1px solid #1a4756;
+  border-radius: 3px;
+}
+
+.username-form-container #username-form #submit-username {
+  height: 25px;
+  font-size: 1rem;
+  border: none;
+  background-color: #1a4756;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.multiplayer-session {
+  display: none;
+  height: 35px;
+  color: #1a4756;
+  border: none;
+  text-align: left;
+  background-color: #b8deea;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.multiplayer-session:hover {
+  background-color: #43A6C6;
+}
+
+.multiplayer-session.confirm {
+  color: #fff;
+  background-color: #1a4756;
+  cursor: initial;
+}
+
+.multiplayer-session.confirm i {
+  visibility: visible;
+}
+
+.multiplayer-session.active {
+  background-color: #00e600;
+  cursor: initial;
+}
+
+.multiplayer-session.active .cancel-icon {
+  visibility: visible;
+}
+
+.multiplayer-session i {
+  visibility: hidden;
+  display: inline-block;
+  float: right;
+  margin-left: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+
+.multiplayer-session .accept-icon {
+  background-image: url("../assets/icons/accept.png");
+}
+
+.multiplayer-session .cancel-icon {
+  background-image: url("../assets/icons/cancel.png");
+}
+
 .end-message {
   visibility: hidden;
   opacity: 0;
@@ -174,9 +317,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -190,6 +332,19 @@ body {
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .game-mode button label {
@@ -197,6 +352,7 @@ body {
   transition: opacity 0.3s;
   opacity: 0;
   color: #1a4756;
+  margin-top: 5px;
 }
 
 .game-mode button i {

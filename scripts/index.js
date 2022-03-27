@@ -9,5 +9,7 @@ const restartButton = (document.querySelector('[data-restart-button]'));
 const singlePlayerButton = (document.getElementById('single-button'));
 const multiPlayerButton = (document.getElementById('multi-button'));
 const aiButton = document.getElementById('ai-button');
-const ticTacToe = new TicTacToeGame(cellElements, board, endMessage, endText, restartButton, [singlePlayerButton, multiPlayerButton, aiButton]);
+const multiPlayerMenu = document.querySelector('[data-multiplayer-menu]');
+const usernameForm = document.getElementById('username-form');
+const ticTacToe = new TicTacToeGame(cellElements, board, endMessage, endText, restartButton, [singlePlayerButton, multiPlayerButton, aiButton], multiPlayerMenu, usernameForm);
 ticTacToe.startGame();

@@ -18,6 +18,8 @@ const multiPlayerButton = <HTMLButtonElement>(
     document.getElementById('multi-button')
 );
 const aiButton = <HTMLButtonElement>document.getElementById('ai-button');
+const multiPlayerMenu = <HTMLDivElement>document.querySelector('[data-multiplayer-menu]');
+const usernameForm = <HTMLFormElement>document.getElementById('username-form');
 
 const ticTacToe: TicTacToeGame = new TicTacToeGame(
     cellElements,
@@ -25,7 +27,9 @@ const ticTacToe: TicTacToeGame = new TicTacToeGame(
     endMessage,
     endText,
     restartButton,
-    [singlePlayerButton, multiPlayerButton, aiButton]
+    [singlePlayerButton, multiPlayerButton, aiButton],
+    multiPlayerMenu,
+    usernameForm
 );
 
 ticTacToe.startGame();
